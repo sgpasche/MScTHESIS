@@ -65,7 +65,7 @@ def read_file__():
 st = read_file__()
 st.sort()
 st2 = st.copy()  # is that necessary if I dont BP filter ?
-trig = coincidence_trigger("classicstalta", 1.001, 0.999, st, 3, sta=0.5, lta=10,)
+trig = coincidence_trigger("classicstalta", 1.01, 0.99, st, 3, sta=0.5, lta=10,)
 # la ligne supperieur c'est les meme param que lorsque que je display
 # details=True pour avoir les details, mais du coup il faut select un tring [0]
 pprint(trig)
