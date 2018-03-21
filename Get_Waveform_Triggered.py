@@ -8,6 +8,7 @@ Created on Tue Mar 20 15:45:05 2018
 First try using panda, in order to change my dictionary I get from Obspy
 I am going to implement first a coincidence Network and then get the dictionary
 to change them into data Serie to display them
+So far this is my final version to display triggered data only. 21 mars 2018
 """
 
 import pandas as pd
@@ -37,7 +38,8 @@ def read_allfile():
 st = read_allfile()
 st.sort()
 st2 = st.copy()  # is that necessary if I dont BP filter ?
-trig = coincidence_trigger("recstalta", 1.005, 0.995, st2, 2, sta=1, lta=10)
+trig = coincidence_trigger("classicstalta", 1.005, 0.995, st2, 2, sta=5, lta=10)
+
 # thr_on, thr_off, thrs coincid (min chan have to coincide)
 trig = pd.DataFrame(trig)
 
@@ -54,7 +56,3 @@ trg = read_triggered()
 trg.sort()
 print(trg.__str__(extended=True))
 trg.plot(size=(800, 600))
-
-
-
-
