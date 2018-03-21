@@ -52,8 +52,8 @@ st = read_file__()
 st.sort()
 # print(st)
 print(st.__str__(extended=True))
-st.plot(size=(800, 600))
-plt.show()
+#st.plot(size=(800, 600))
+#plt.show()
 
 
 # singlechannel = read(wdir+"/4D.EIG1..EHZ.D.2016.111")

@@ -42,7 +42,7 @@ data = read_file__()
 
 print(data)
 print(data[0].stats.mseed)
-data.plot(800, 600)
+
 
 # Zoom in our data (choose start time, color and number of ticks)
 # dt = threechannels[0].stats.starttime

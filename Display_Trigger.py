@@ -10,7 +10,7 @@ commentaires : first try STA/LTA, only with EIG, with first data set
 # import important module from obspy to prevent overwrite
 
 from obspy.core import read, Stream
-from obspy.signal.trigger import classic_sta_lta, plot_trigger
+from obspy.signal.trigger import recursive_sta_lta, plot_trigger
 st = read()
 wdir = "/Users/sandieguillaumettepasche/Documents/MASTER/Test_data"
 
@@ -32,11 +32,10 @@ def read_file__():
 
 stream = read_file__()
 stream.sort()
-# print(steam)
+print(stream)
 # print(stream.__str__(extended=True))
 
 for ix in range(len(stream)):
-    # parametre du triggering
     df = stream[ix].stats.sampling_rate  # pour le coup c'est la freq en HZ (ICI 200)
-    cft = classic_sta_lta(stream[ix].data, int(5 * df), int(10 * df))  # longueur des fenetre
-    plot_trigger(stream[ix], cft, 1.001, 0.999)  # set les limites STA/LTA
+    cft = recursive_sta_lta(stream[ix].data, int(6 * df), int(16 * df))  # longueur des fenetre
+    plot_trigger(stream[ix], cft, 1.01, 0.999)  # set les limites STA/LTA MAIS DANS CE CAS INUTILE ODER ?

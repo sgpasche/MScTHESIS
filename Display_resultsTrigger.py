@@ -43,5 +43,5 @@ stream2 = stream.copy()
 
 for ix in range(len(stream)):
     # parametre du triggering
-    stream[ix].trigger('recstalta', sta=1.001, lta=0.999)
+    stream[ix].trigger('recstalta', sta=1.01, lta=0.99)
     stream.plot()
